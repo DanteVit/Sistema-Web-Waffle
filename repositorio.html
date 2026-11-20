@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Repositorio de Juegos</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="navbar">
+        <a href="index.html">
+            <img src="images/logo-original.png" alt="Waffle Logo" class="logo-img" id="logo-header">
+        </a>
+        <nav class="nav-center">
+            <a href="reproductor.html" class="btn-nav">Reproductor de juegos</a>
+            <a href="repositorio.html" class="btn-nav">Repositorio de juegos</a>
+            <a href="comunidad.html" class="btn-nav">Comunidad y Publicaciones</a>
+            <a href="index.html" class="btn-nav">Información sobre el proyecto</a>
+            <a href="tienda.html" class="btn-nav">Tienda</a>
+        </nav>
+
+        <div class="nav-right">
+            <button class="btn-inter" title="Personalización">
+                <a href="aspecto.html">
+                    <img src="images/aspect-icon.png" alt="Personalización" class="icon-nav">
+                </a>
+            </button>
+    
+            <button class="btn-inter" title="Ajustes">
+                <a href="ajustes.html">
+                    <img src="images/ajustes-icon.png" alt="Ajustes" class="icon-nav">
+                </a>
+            </button>
+
+            <div class="puntos-usuario" title="Tus puntos disponibles">
+                <span>🧇 <strong id="puntos-header">500</strong> pts</span>
+            </div>
+    
+            <div class="perfil-usuario">
+                <img src="images/guest.png" alt="Avatar" class="avatar-img">
+                <span class="nombre-usuario" id="nombre-header">guest666</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="main-container">
+        
+        <h1 class="main-title">Repositorio de Juegos (.SWF)</h1>
+
+        <section class="content-card">
+            <h2 class="card-title">🔍 Buscar y Filtrar por Categoría</h2>
+            <div class="form-group" style="margin-bottom: 14px;">
+                <input type="text" id="buscador-juegos" placeholder="Buscar juego por nombre...">
+            </div>
+            <div class="filtros-genero" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <button type="button" class="btn-nav" data-categoria="todos" style="border: none; cursor: pointer; background-color: #ffcf2f; color: #2a2a2a;">Todos</button>
+                <button type="button" class="btn-nav" data-categoria="accion" style="border: none; cursor: pointer; background-color: #2a2a2a; color: #ffffff;">Acción</button>
+                <button type="button" class="btn-nav" data-categoria="aventura" style="border: none; cursor: pointer; background-color: #2a2a2a; color: #ffffff;">Aventura</button>
+                <button type="button" class="btn-nav" data-categoria="estrategia" style="border: none; cursor: pointer; background-color: #2a2a2a; color: #ffffff;">Estrategia</button>
+                <button type="button" class="btn-nav" data-categoria="plataformas" style="border: none; cursor: pointer; background-color: #2a2a2a; color: #ffffff;">Plataformas</button>
+                <button type="button" class="btn-nav" data-categoria="clasicos" style="border: none; cursor: pointer; background-color: #2a2a2a; color: #ffffff;">Clásicos</button>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">🕹️ Juegos Disponibles</h2>
+            <p style="margin-bottom: 15px;">Selecciona cualquier título para abrirlo directamente en el emulador.</p>
+
+            <div class="tienda-grid" id="grid-juegos">
+                <p id="mensaje-repo-vacio" style="grid-column: 1 / -1; text-align: center; padding: 35px 15px; color: #cccccc; font-size: 1.1rem;">
+                    Ups! No tiene ninguno juego en tu repositorio. Sube uno Aqui abajo
+                </p>
+                <p id="mensaje-filtro-vacio" style="display: none; grid-column: 1 / -1; text-align: center; padding: 30px 15px; color: #cccccc; font-size: 1.05rem;">
+                    No hay juegos en esta categoría todavía.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">📤 Aportar un Juego al Repositorio</h2>
+            <p style="margin-bottom: 15px;">¿Tienes un archivo <strong>.swf</strong> clásico? Súbelo para conservarlo en la colección.</p>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="titulo-juego">Título del Juego</label>
+                    <input type="text" id="titulo-juego" name="title" placeholder="Nombre oficial del juego" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero-juego">Género</label>
+                    <select id="genero-juego" name="genre" class="select-waffle">
+                        <option value="accion">Acción</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="estrategia">Estrategia</option>
+                        <option value="plataformas">Plataformas</option>
+                        <option value="clasicos">Clásicos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="archivo-swf">Archivo del Juego (.swf)</label>
+                    <input type="file" id="archivo-swf" name="swf_file" accept=".swf" required>
+                </div>
+
+                <div class="action-container">
+                    <button type="submit" class="boton-piola">Subir al Repositorio</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="script-waffle.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Administración de Base de Datos</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.php">
+                <img src="images/logo-original.png" alt="Waffle Logo" class="logo-img" id="logo-header">
+            </a>
+            <nav class="nav-center">
+                <a href="reproductor.html" class="btn-nav">Reproductor de juegos</a>
+                <a href="repositorio.html" class="btn-nav">Repositorio de juegos</a>
+                <a href="comunidad.html" class="btn-nav">Comunidad y Publicaciones</a>
+                <a href="index.php" class="btn-nav">Información sobre el proyecto</a>
+                <a href="tienda.html" class="btn-nav">Tienda</a>
+            </nav>
+
+            <div class="nav-right">
+                <button class="btn-inter" title="Personalización">
+                    <a href="aspecto.html">
+                        <img src="images/aspect-icon.png" alt="Personalización" class="icon-nav">
+                    </a>
+                </button>
+        
+                <button class="btn-inter" title="Ajustes">
+                    <a href="ajustes.html">
+                        <img src="images/ajustes-icon.png" alt="Ajustes" class="icon-nav">
+                    </a>
+                </button>
+
+                <div class="puntos-usuario" title="Tus puntos disponibles">
+                    <span>🧇 <strong id="puntos-header">500</strong> pts</span>
+                </div>
+        
+                <div class="perfil-usuario">
+                    <img src="images/guest.png" alt="Avatar" class="avatar-img">
+                    <span class="nombre-usuario" id="nombre-header">guest666</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1 class="main-title">🗄️ Base de Datos (waffle_db)</h1>
+
+        <section class="content-card">
+            <h2 class="card-title">Tablas del Sistema</h2>
+            <p style="margin-bottom: 14px;">Selecciona una tabla para inspeccionar, modificar, agregar o eliminar registros en tiempo real.</p>
+            <div id="lista-tablas-admin" class="filtros-genero" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+        </section>
+
+        <section class="content-card" id="seccion-nuevo-registro" style="display: none;">
+            <h2 class="card-title" id="titulo-nuevo-registro">➕ Nuevo Registro</h2>
+            <form id="form-nuevo-registro">
+                <div id="campos-nuevo-registro" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;"></div>
+                <div class="action-container" style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button type="submit" class="boton-piola">Guardar Registro</button>
+                    <button type="button" class="btn-nav" style="border: none; cursor: pointer;" onclick="toggleFormNuevoRegistro(false)">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                <h2 class="card-title" id="titulo-tabla-activa" style="margin-bottom: 0;">Tabla: users</h2>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="text" id="filtro-filas-bd" placeholder="Filtrar filas..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #555; background: #222; color: #fff;">
+                    <button type="button" class="boton-piola" onclick="toggleFormNuevoRegistro(true)">+ Agregar Fila</button>
+                </div>
+            </div>
+
+            <div class="tabla-contenedor" style="overflow-x: auto;">
+                <table class="db-table" id="tabla-editor-bd">
+                    <thead id="thead-editor-bd"></thead>
+                    <tbody id="tbody-editor-bd">
+                        <tr><td style="text-align: center; padding: 20px;">Cargando tablas...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script-waffle.js"></script>
+</body>
+</html>

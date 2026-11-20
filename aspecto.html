@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Personalización</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script-waffle.js"></script>
+</head>
+<body>
+
+    <main class="main-container" style="margin-top: 30px;">
+        
+        <div>
+            <a href="index.html" class="btn-nav" style="display: inline-block; text-decoration: none;">← Volver</a>
+        </div>
+
+        <h1 class="main-title">Personalización y Aspecto</h1>
+
+        <section class="content-card">
+            <h2 class="card-title">🎨 Skins de Logo</h2>
+            <div class="tienda-grid">
+                
+                <div class="item-card" data-aspecto-item="logo-original" data-tipo="logo" data-valor="images/logo-original.png">
+                    <div class="item-preview">
+                        <img src="images/logo-original.png" alt="Original">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Original</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-original.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-chocolate" data-tipo="logo" data-valor="images/logo-chocolate.png">
+                    <div class="item-preview">
+                        <img src="images/logo-chocolate.png" alt="Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Chocolate</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-chocolate.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-frutilla" data-tipo="logo" data-valor="images/logo-frutilla.png">
+                    <div class="item-preview">
+                        <img src="images/logo-frutilla.png" alt="Frutilla">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Frutilla🍓</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-frutilla.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-pixel" data-tipo="logo" data-valor="images/logo-pixel.png">
+                    <div class="item-preview">
+                        <img src="images/logo-pixel.png" alt="Pixel">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Pixel Retro👾</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-pixel.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-shiny" data-tipo="logo" data-valor="images/logo-shiny.png">
+                    <div class="item-preview">
+                        <img src="images/logo-shiny.png" alt="Shiny">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Shiny✨</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-shiny.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-confeti" data-tipo="logo" data-valor="images/logo-confeti.png">
+                    <div class="item-preview">
+                        <img src="images/logo-confeti.png" alt="Confeti">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Confeti 🎉</h3>
+                        <button class="boton-piola" onclick="equiparLogo('images/logo-confeti.png', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="logo-friv" data-tipo="logo" data-valor="images/logo-friv.png">
+                    <div class="item-preview">
+                        <img src="images/logo-friv.png" alt="Logo Friv">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Logo Clásico Friv</h3>
+                        <button type="button" class="boton-piola btn-placeholder" disabled onclick="equiparLogo('images/logo-friv.png', this)">Bloqueado 🔒</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">🖼️ Fondos de Pantalla</h2>
+            <div class="tienda-grid">
+                
+                <div class="item-card" data-aspecto-item="fondo-default" data-tipo="fondo" data-valor="#383838">
+                    <div class="item-preview preview-fondo fondo-default"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Gris Waffle</h3>
+                        <button class="boton-piola" onclick="equiparFondo('#383838', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="fondo-dark" data-tipo="fondo" data-valor="#121212">
+                    <div class="item-preview preview-fondo fondo-dark"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Modo Noche</h3>
+                        <button class="boton-piola" onclick="equiparFondo('#121212', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="fondo-neon" data-tipo="fondo" data-valor="linear-gradient(135deg, #0d0221, #00f0ff)">
+                    <div class="item-preview preview-fondo fondo-neon"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Cyber Neón</h3>
+                        <button class="boton-piola" onclick="equiparFondo('linear-gradient(135deg, #0d0221, #00f0ff)', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="fondo-warm" data-tipo="fondo" data-valor="linear-gradient(135deg, #3d2314, #795548)">
+                    <div class="item-preview preview-fondo fondo-warm"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Chocolate Warm</h3>
+                        <button class="boton-piola" onclick="equiparFondo('linear-gradient(135deg, #3d2314, #795548)', this)">Equipar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">🔤 Tipografías Compradas</h2>
+            <div class="tienda-grid">
+                
+                <div class="item-card" data-aspecto-item="font-comic" data-tipo="fuente" data-valor="'Comic Sans MS', cursive, sans-serif">
+                    <div class="item-preview preview-font font-comic"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Comic Sans</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Comic Sans MS\', cursive, sans-serif', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-bubblegum" data-tipo="fuente" data-valor="'Bubblegum Sans', cursive, sans-serif">
+                    <div class="item-preview preview-font font-bubblegum"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Bubblegum</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Bubblegum Sans\', cursive, sans-serif', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-grobold" data-tipo="fuente" data-valor="'Grobold', sans-serif">
+                    <div class="item-preview preview-font font-grobold"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">GROBOLD</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Grobold\', sans-serif', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-minecraftia" data-tipo="fuente" data-valor="'Minecraftia', monospace">
+                    <div class="item-preview preview-font font-minecraftia"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Minecraftia</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Minecraftia\', monospace', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-press-start" data-tipo="fuente" data-valor="'Press Start 2P', monospace">
+                    <div class="item-preview preview-font font-press-start"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Press Start</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Press Start 2P\', monospace', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-upheaval" data-tipo="fuente" data-valor="'Upheaval', monospace">
+                    <div class="item-preview preview-font font-upheaval"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Upheaval</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'Upheaval\', monospace', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-vcr" data-tipo="fuente" data-valor="'VCR OSD Mono', monospace">
+                    <div class="item-preview preview-font font-vcr"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">VCR OSD Mono</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'VCR OSD Mono\', monospace', this)">Equipar</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-aspecto-item="font-vt323" data-tipo="fuente" data-valor="'VT323', monospace">
+                    <div class="item-preview preview-font font-vt323"><span>Aa Bb Cc</span></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">VT323 Terminal</h3>
+                        <button class="boton-piola" onclick="equiparFuente('\'VT323\', monospace', this)">Equipar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

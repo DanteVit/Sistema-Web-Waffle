@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Ajustes</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="main-container" style="margin-top: 30px;">
+        
+        <div>
+            <a href="index.php" class="btn-nav" style="display: inline-block; text-decoration: none;">← Volver</a>
+        </div>
+
+        <h1 class="main-title">Ajustes del Sistema</h1>
+
+        <section class="content-card">
+            <h2 class="card-title">Configuración de Cuenta</h2>
+            <div class="ajustes-grupo">
+                
+                <div class="ajuste-row" style="flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h3 class="feature-subtitle">Perfil de Usuario</h3>
+                        <p>Cambia tu imagen de avatar, nombre de usuario o correo electrónico.</p>
+                    </div>
+                    <button type="button" class="boton-piola" onclick="togglePanelAjustes('panel-editar-perfil')">Editar Perfil</button>
+
+                    <form id="panel-editar-perfil" style="display: none; width: 100%; margin-top: 10px; padding-top: 15px; border-top: 1px solid #555;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <img id="preview-avatar-ajustes" src="images/guest.png" alt="Avatar" style="width: 68px; height: 68px; border-radius: 50%; object-fit: cover; border: 2px solid #ffcf2f;">
+                            <div>
+                                <label style="display: block; margin-bottom: 6px; color: #ffcf2f;">Elige un avatar o sube una imagen:</label>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                                    <select id="ajustes-avatar-preset" style="padding: 8px; border-radius: 6px; background: #222; color: #fff; border: 1px solid #555;">
+                                        <option value="images/guest.png">Waffle Guest (Por defecto)</option>
+                                        <option value="images/Icon.png">Ícono Waffle</option>
+                                        <option value="images/logo-original.png">Logo Clásico</option>
+                                    </select>
+                                    <input type="file" id="ajustes-avatar-file" accept=".png,.jpg,.jpeg,.webp,.gif" style="color: #fff;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ajustes-username">Nombre de usuario</label>
+                            <input type="text" id="ajustes-username" required maxlength="30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ajustes-email">Correo electrónico</label>
+                            <input type="email" id="ajustes-email" required maxlength="100">
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="boton-piola">Guardar Cambios</button>
+                            <button type="button" class="btn-nav" style="border: none; cursor: pointer;" onclick="togglePanelAjustes('panel-editar-perfil')">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="ajuste-row" style="flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h3 class="feature-subtitle">Seguridad</h3>
+                        <p>Actualiza tu contraseña o configura la autenticación.</p>
+                    </div>
+                    <button type="button" class="boton-piola" onclick="togglePanelAjustes('panel-cambiar-password')">Cambiar Contraseña</button>
+
+                    <form id="panel-cambiar-password" style="display: none; width: 100%; margin-top: 10px; padding-top: 15px; border-top: 1px solid #555;">
+                        <div class="form-group">
+                            <label for="pass-actual">Contraseña actual</label>
+                            <input type="password" id="pass-actual" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass-nueva">Nueva contraseña</label>
+                            <input type="password" id="pass-nueva" required minlength="4">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass-confirmar">Confirmar nueva contraseña</label>
+                            <input type="password" id="pass-confirmar" required minlength="4">
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="boton-piola">Actualizar Contraseña</button>
+                            <button type="button" class="btn-nav" style="border: none; cursor: pointer;" onclick="togglePanelAjustes('panel-cambiar-password')">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">Preferencias de la Plataforma</h2>
+            <div class="ajustes-grupo">
+                
+                <div class="ajuste-row" style="flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h3 class="feature-subtitle">Notificaciones</h3>
+                        <p>Administra las alertas y anuncios del sistema.</p>
+                    </div>
+                    <button type="button" class="boton-piola" onclick="togglePanelAjustes('panel-notificaciones')">Configurar</button>
+
+                    <form id="panel-notificaciones" style="display: none; width: 100%; margin-top: 10px; padding-top: 15px; border-top: 1px solid #555;">
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" id="notif-tienda" checked style="width: 18px; height: 18px;">
+                                <span>Mostrar avisos al comprar artículos y gastar puntos en la tienda</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" id="notif-comunidad" checked style="width: 18px; height: 18px;">
+                                <span>Alertas de publicaciones y calificaciones en la comunidad</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" id="notif-sistema" checked style="width: 18px; height: 18px;">
+                                <span>Anuncios y novedades del sistema Waffle</span>
+                            </label>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="boton-piola">Guardar Preferencias</button>
+                            <button type="button" class="btn-nav" style="border: none; cursor: pointer;" onclick="togglePanelAjustes('panel-notificaciones')">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card alert-card-ajustes">
+            <h2 class="card-title" style="color: #fca5a5;">Zona de Cuenta</h2>
+            <div class="ajuste-row">
+                <div>
+                    <p>Finaliza la sesión actual y vuelve al inicio de sesión.</p>
+                </div>
+                <br>
+                <a href="login.html" class="boton-piola btn-danger" onclick="cerrarSesion(event)">Cerrar Sesión</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script-waffle.js"></script>
+</body>
+</html>

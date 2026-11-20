@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Repositorio</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script-waffle.js"></script>
+</head>
+<body>
+     <header>
+    <div class="navbar">
+        <a href="index.html">
+            <img src="images/logo-original.png" alt="Waffle Logo" class="logo-img" id="logo-header">
+        </a>
+        <nav class="nav-center">
+            <a href="reproductor.html" class="btn-nav">Reproductor de juegos</a>
+            <a href="repositorio.html" class="btn-nav">Repositorio de juegos</a>
+            <a href="comunidad.html" class="btn-nav">Comunidad y Publicaciones</a>
+            <a href="index.html" class="btn-nav">Información sobre el proyecto</a>
+            <a href="tienda.html" class="btn-nav">Tienda</a>
+        </nav>
+
+        <div class="nav-right">
+            <button class="btn-inter" title="Personalización">
+                <a href="aspecto.html">
+                    <img src="images/aspect-icon.png" alt="Personalización" class="icon-nav">
+                </a>
+            </button>
+    
+            <button class="btn-inter" title="Ajustes">
+                <a href="ajustes.html">
+                    <img src="images/ajustes-icon.png" alt="Ajustes" class="icon-nav">
+                </a>
+            </button>
+
+            <div class="puntos-usuario" title="Tus puntos disponibles">
+                <span>🧇 <strong id="puntos-header">500</strong> pts</span>
+            </div>
+    
+            <div class="perfil-usuario">
+                <img src="images/guest.png" alt="Avatar" class="avatar-img">
+                <span class="nombre-usuario" id="nombre-header">guest666</span>
+            </div>
+        </div>
+    </div>
+</header>
+    </header>
+    <main class="main-container">
+        <h1 class="main-title">Reproductor de Juegos Flash</h1>
+        <div id="contenedor-player" class="contenedor-player">
+            <div id="texto-instrucciones" class="texto-instrucciones">
+                <h2>Arrastra tu archivo .swf aquí</h2>
+                <p>o haz clic para buscarlo en tu computadora</p>
+            </div>
+        </div>
+    <input type="file" class="file-input" id="file-input" accept=".swf">
+    </main>
+    
+    
+   
+
+    <!-- Carga de la librería oficial de Ruffle-->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+    <script>
+        const contenedor = document.getElementById('contenedor-player');
+        const fileInput = document.getElementById('file-input');
+        const instrucciones = document.getElementById('texto-instrucciones');
+        let rufflePlayer = null;
+
+        function obtenerPlayer() {
+            if (!rufflePlayer) {
+                const ruffle = window.RufflePlayer.newest();
+                rufflePlayer = ruffle.createPlayer();
+                rufflePlayer.style.width = "100%";
+                rufflePlayer.style.height = "100%";
+            }
+            return rufflePlayer;
+        }
+
+        // Eventos para arrastrar archivos (Drag & Drop)
+        contenedor.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            contenedor.classList.add('dragover');
+        });
+
+        contenedor.addEventListener('dragleave', () => {
+            contenedor.classList.remove('dragover');
+        });
+
+        contenedor.addEventListener('drop', (e) => {
+            e.preventDefault();
+            contenedor.classList.remove('dragover');
+            
+            const archivos = e.dataTransfer.files;
+            if (archivos.length > 0) {
+                procesarArchivo(archivos[0]);
+            }
+        });
+
+        // Permitir clic para buscar archivo
+        contenedor.addEventListener('click', () => {
+            if (!contenedor.contains(rufflePlayer)) {
+                fileInput.click();
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                procesarArchivo(e.target.files[0]);
+            }
+        });
+
+        // Leer el archivo SWF y cargarlo en Ruffle
+        function procesarArchivo(archivo) {
+            if (!archivo.name.endsWith('.swf')) {
+                alert('Por favor, arrastra un archivo válido con extensión .swf');
+                return;
+            }
+
+            instrucciones.style.display = 'none';
+            contenedor.style.cursor = 'default';
+
+            const player = obtenerPlayer();
+            if (!contenedor.contains(player)) {
+                contenedor.appendChild(player);
+            }
+
+            // Se usa FileReader para convertir el archivo en datos legibles por Ruffle
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const arrayBuffer = e.target.result;
+                const datosFlash = new Uint8Array(arrayBuffer);
+                
+                player.load({
+                    data: datosFlash,
+                    allowScriptAccess: true
+                });
+            };
+            
+            reader.readAsArrayBuffer(archivo);
+        }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const juegoUrl = params.get('game');
+
+    if (juegoUrl) {
+        instrucciones.style.display = 'none';
+        contenedor.style.cursor = 'default';
+        const player = obtenerPlayer();
+        if (!contenedor.contains(player)) {
+            contenedor.appendChild(player);
+        }
+        player.load(juegoUrl);
+    }
+});
+    </script>
+</body>
+</html>

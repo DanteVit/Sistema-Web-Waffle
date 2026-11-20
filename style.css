@@ -1,0 +1,883 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y TEMA GLOBAL (WAFFLE)
+   ========================================================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #383838;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 16px;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+
+header {
+    width: 100%;
+    max-width: 100%;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px 16px;
+    background-color: #4a4a4a;
+    padding: 10px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 28px;
+    height: auto;
+    min-height: 90px;
+    width: 100%;
+}
+
+.navbar > a:first-child {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-center {
+    flex: 1 1 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-right {
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+.logo-img {
+    max-height: 78px;
+    width: auto;
+    object-fit: contain;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.btn-nav {
+    background-color: #ffcf2f;
+    color: #1a1a1a;
+    padding: 9px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-nav:hover {
+    background-color: #ffd446;
+    transform: translateY(-2px);
+}
+
+.btn-ajustes {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-inter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-inter:hover {
+    transform: scale(1.15) rotate(-10deg);
+}
+
+.icon-nav {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 6px 15px;
+    border-radius: 24px;
+    flex-shrink: 0;
+}
+
+.img-avatar-perfil, .avatar-img {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.nombre-usuario {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA Y TARJETAS DE CONTENIDO
+   ========================================================================== */
+
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-title {
+    color: #ffcf2f;
+    text-align: center;
+    font-size: clamp(26px, 3.2vw, 38px);
+    margin: 6px 0 16px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-card {
+    background-color: #4a4a4a;
+    padding: 22px 26px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.card-title {
+    color: #ffcf2f;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.feature-item {
+    margin-top: 15px;
+}
+
+.feature-subtitle {
+    color: #ffd446;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+p {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.alert-card {
+    background-color: #5a2828;
+    color: #fca5a5;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border-left: 6px solid #f35c5c;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alert-card strong {
+    color: #ffffff;
+}
+
+.action-container {
+    margin-top: 10px;
+}
+
+.boton-piola {
+    background-color: #51f590;
+    color: #2a0845;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 12px rgba(81, 245, 144, 0.3);
+}
+
+.boton-piola:hover {
+    background-color: #69ffaa;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ESTILOS PARA LOGIN Y REGISTRO
+   ========================================================================== */
+
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 92%;
+    gap: 40px;
+}
+
+.auth-left {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-logo {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+}
+
+.auth-tagline {
+    color: #ffcf2f;
+    font-size: 24px;
+    margin-top: 20px;
+    line-height: 1.3;
+}
+
+.auth-right {
+    flex: 1;
+    width: 100%;
+}
+
+.auth-card {
+    background-color: #4a4a4a;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.auth-card h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    color: #ffd446;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid #666;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+}
+
+.form-group input:focus {
+    border-color: #ffcf2f;
+}
+
+.btn-auth {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.auth-switch a {
+    color: #51f590;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   ESTILOS PARA REPOSITORIO Y PLAYER DE ARCHIVOS (REPO)
+   ========================================================================== */
+
+.contenedor-player {
+    width: 100%;
+    max-width: 100%;
+    height: min(68vh, 580px);
+    min-height: 360px;
+    border: 3px dashed #555;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.contenedor-player.dragover {
+    background-color: #3a3a3a;
+    border-color: #11e0b4;
+}
+
+.texto-instrucciones {
+    text-align: center;
+    pointer-events: none;
+    padding: 0 15px;
+}
+
+.texto-instrucciones p {
+    margin: 5px 0;
+    color: #d4d4d4;
+}
+
+.file-input {
+    display: none;
+}
+
+/* ==========================================================================
+   ESTILOS PARA TIENDA
+   ========================================================================== */
+
+.tienda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.item-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #3a3a3a;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffcf2f;
+}
+
+.item-preview {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #383838;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.item-preview img {
+    max-height: 80px;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.preview-fondo {
+    border: 1px solid #555;
+}
+.fondo-default { background-color: #383838; }
+.fondo-dark { background-color: #121212; }
+.fondo-neon { background: linear-gradient(135deg, #0d0221, #00f0ff); }
+.fondo-warm { background: linear-gradient(135deg, #3d2314, #795548); }
+
+.preview-font {
+    color: #ffcf2f;
+    font-size: 20px;
+    font-weight: bold;
+}
+.font-comic { font-family: 'Comic Sans MS', cursive, sans-serif; }
+.font-pixel { font-family: 'Courier New', monospace; letter-spacing: 2px; }
+.font-sans { font-family: Arial, Helvetica, sans-serif; }
+.font-mono { font-family: 'Courier New', Courier, monospace; }
+
+.item-info {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.item-info .feature-subtitle {
+    margin: 0;
+    font-size: 16px;
+}
+
+.item-precio {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.item-info .boton-piola {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.btn-equipado {
+    background-color: #4a4a4a;
+    color: #888888;
+    box-shadow: none;
+    cursor: default;
+}
+
+.btn-equipado:hover {
+    background-color: #4a4a4a;
+    transform: none;
+}
+
+/* ==========================================================================
+   REGISTRAR FUENTES LOCALES (@font-face)
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Bubblegum Sans';
+    src: url('fonts/BubblegumSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Grobold';
+    src: url('fonts/GROBOLD.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('fonts/Minecraftia-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Upheaval';
+    src: url('fonts/upheavtt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VT323';
+    src: url('fonts/VT323-Regular.ttf') format('truetype');
+}
+
+/* ==========================================================================
+   CLASES DE PREVISUALIZACIÓN DE FUENTES
+   ========================================================================== */
+
+.font-comic { font-family: 'Comic Sans MS', cursive, sans-serif; }
+.font-bubblegum { font-family: 'Bubblegum Sans', cursive, sans-serif; }
+.font-grobold { font-family: 'Grobold', sans-serif; }
+.font-minecraftia { font-family: 'Minecraftia', monospace; }
+.font-press-start { font-family: 'Press Start 2P', monospace; font-size: 14px; }
+.font-upheaval { font-family: 'Upheaval', monospace; }
+.font-vcr { font-family: 'VCR OSD Mono', monospace; }
+.font-vt323 { font-family: 'VT323', monospace; font-size: 22px; }
+
+/* ==========================================================================
+   ESTILOS PARA REPOSITORIO
+   ========================================================================== */
+
+.filtros-genero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.select-waffle {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid #666;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+}
+
+.select-waffle:focus {
+    border-color: #ffcf2f;
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL FORO (COMUNIDAD Y PUBLICACIONES)
+   ========================================================================== */
+
+.textarea-waffle {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid #666;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    width: 100%;
+}
+
+.textarea-waffle:focus {
+    border-color: #ffcf2f;
+}
+
+.foro-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 18px 22px;
+    border: 2px solid #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    border-color: #ffcf2f;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-autor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.post-username {
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.post-fecha {
+    display: block;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.post-rating-promedio {
+    background-color: #383838;
+    color: #ffcf2f;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post-titulo-link {
+    text-decoration: none;
+}
+
+.post-titulo-link .feature-subtitle {
+    margin-top: 0;
+    transition: color 0.2s;
+}
+
+.post-titulo-link:hover .feature-subtitle {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #3a3a3a;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calificacion-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.estrellas-calificar {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.btn-estrella {
+    background: transparent;
+    border: none;
+    color: #666666;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 2px;
+    transition: color 0.15s, transform 0.15s;
+}
+
+.btn-estrella:hover,
+.btn-estrella.activa {
+    color: #ffcf2f;
+    transform: scale(1.15);
+}
+
+.post-ver-mas {
+    color: #51f590;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.post-ver-mas:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   CONTADOR DE PUNTOS EN NAVBAR Y TIENDA
+   ========================================================================== */
+
+.puntos-usuario {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    border: 2px solid #ffcf2f;
+    color: #ffcf2f;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 15px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.saldo-tienda-bar {
+    background-color: #4a4a4a;
+    border: 2px solid #ffcf2f;
+    border-radius: 12px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.saldo-tienda-valor {
+    color: #ffcf2f;
+    font-size: 20px;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN A NETBOOK SARMIENTO y CELULARES (ULTIMO CAMBIO CSS)
+   ========================================================================== */
+
+@media (max-width: 1480px) {
+    .navbar {
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .logo-img {
+        max-height: 64px;
+    }
+
+    .icon-nav {
+        width: 46px;
+        height: 46px;
+    }
+
+    .avatar-img, .img-avatar-perfil {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    .nombre-usuario {
+        font-size: 17px;
+    }
+
+    .navbar > a:first-child {
+        order: 1;
+    }
+
+    .nav-right {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .nav-center {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .btn-nav {
+        font-size: 14px;
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .logo-img {
+        max-height: 48px;
+    }
+
+    .icon-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-right {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .avatar-img, .img-avatar-perfil {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .nombre-usuario {
+        font-size: 15px;
+        max-width: 120px;
+    }
+
+    .puntos-usuario {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .auth-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content-card {
+        padding: 16px;
+    }
+}

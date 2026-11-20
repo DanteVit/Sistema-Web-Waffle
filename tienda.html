@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle - Tienda</title>
+    <link rel="icon" href="images/Icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script-waffle.js"></script>
+</head>
+<body>
+
+     <header>
+    <div class="navbar">
+        <a href="index.html">
+            <img src="images/logo-original.png" alt="Waffle Logo" class="logo-img" id="logo-header">
+        </a>
+        <nav class="nav-center">
+            <a href="reproductor.html" class="btn-nav">Reproductor de juegos</a>
+            <a href="repositorio.html" class="btn-nav">Repositorio de juegos</a>
+            <a href="comunidad.html" class="btn-nav">Comunidad y Publicaciones</a>
+            <a href="index.html" class="btn-nav">Información sobre el proyecto</a>
+            <a href="tienda.html" class="btn-nav">Tienda</a>
+        </nav>
+
+        <div class="nav-right">
+            <button class="btn-inter" title="Personalización">
+                <a href="aspecto.html">
+                    <img src="images/aspect-icon.png" alt="Personalización" class="icon-nav">
+                </a>
+            </button>
+    
+            <button class="btn-inter" title="Ajustes">
+                <a href="ajustes.html">
+                    <img src="images/ajustes-icon.png" alt="Ajustes" class="icon-nav">
+                </a>
+            </button>
+
+            <div class="puntos-usuario" title="Tus puntos disponibles">
+                <span>🧇 <strong id="puntos-header">500</strong> pts</span>
+            </div>
+    
+            <div class="perfil-usuario">
+                <img src="images/guest.png" alt="Avatar" class="avatar-img">
+                <span class="nombre-usuario" id="nombre-header">guest666</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="main-container">
+        
+        <h1 class="main-title">Tienda Waffle</h1>
+
+        <section class="content-card">
+            <h2 class="card-title">🎨 Skins para el Logo</h2>
+            <div class="tienda-grid" id="grid-skins">
+                
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-original.png" alt="Skin Original">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Original</h3>
+                        <span class="item-precio">Gratis</span>
+                        <button class="boton-piola btn-skin btn-equipado" disabled>Comprado</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-chocolate.png" alt="Skin Chocolate">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Chocolate</h3>
+                        <span class="item-precio">150 Puntos</span>
+                        <button class="boton-piola btn-skin" data-item="logo-chocolate" onclick="comprarItem('logo-chocolate', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-frutilla.png" alt="Skin Frutilla">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Frutilla🍓</h3>
+                        <span class="item-precio">150 Puntos</span>
+                        <button class="boton-piola btn-skin" data-item="logo-frutilla" onclick="comprarItem('logo-frutilla', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-pixel.png" alt="Skin Pixel">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Pixel Retro👾</h3>
+                        <span class="item-precio">250 Puntos</span>
+                        <button class="boton-piola btn-skin" data-item="logo-pixel" onclick="comprarItem('logo-pixel', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-shiny.png" alt="Skin Shiny">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Shiny✨</h3>
+                        <span class="item-precio">500 Puntos</span>
+                        <button class="boton-piola btn-skin" data-item="logo-shiny" onclick="comprarItem('logo-shiny', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-confeti.png" alt="Skin Confeti">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Confeti 🎉</h3>
+                        <span class="item-precio">300 Puntos</span>
+                        <button class="boton-piola btn-skin" data-item="logo-confeti" onclick="comprarItem('logo-confeti', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview">
+                        <img src="images/logo-friv.png" alt="Logo Friv">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Logo Clásico Friv</h3>
+                        <span class="item-precio">999 pts</span>
+                        <button type="button" class="boton-piola" data-item="logo-friv" onclick="comprarItem('logo-friv', this)">Comprar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">🖼️ Fondos de Pantalla</h2>
+            <div class="tienda-grid">
+                
+                <div class="item-card">
+                    <div class="item-preview preview-fondo fondo-default"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Gris Waffle</h3>
+                        <span class="item-precio">Gratis</span>
+                        <button class="boton-piola btn-equipado" disabled>Comprado</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-fondo fondo-dark"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Modo Noche</h3>
+                        <span class="item-precio">100 Puntos</span>
+                        <button class="boton-piola" data-item="fondo-dark" onclick="comprarItem('fondo-dark', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-fondo fondo-neon"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Cyber Neón</h3>
+                        <span class="item-precio">200 Puntos</span>
+                        <button class="boton-piola" data-item="fondo-neon" onclick="comprarItem('fondo-neon', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-fondo fondo-warm"></div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Chocolate Warm</h3>
+                        <span class="item-precio">200 Puntos</span>
+                        <button class="boton-piola" data-item="fondo-warm" onclick="comprarItem('fondo-warm', this)">Obtener</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="card-title">🔤 Fuentes de Letras</h2>
+            <div class="tienda-grid">
+                
+                <div class="item-card">
+                    <div class="item-preview preview-font font-comic">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Comic Sans</h3>
+                        <span class="item-precio">Gratis</span>
+                        <button class="boton-piola btn-equipado" disabled>Comprado</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-bubblegum">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Bubblegum</h3>
+                        <span class="item-precio">100 Puntos</span>
+                        <button class="boton-piola" data-item="font-bubblegum" onclick="comprarItem('font-bubblegum', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-grobold">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">GROBOLD</h3>
+                        <span class="item-precio">120 Puntos</span>
+                        <button class="boton-piola" data-item="font-grobold" onclick="comprarItem('font-grobold', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-minecraftia">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Minecraftia</h3>
+                        <span class="item-precio">150 Puntos</span>
+                        <button class="boton-piola" data-item="font-minecraftia" onclick="comprarItem('font-minecraftia', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-press-start">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Press Start 8-Bit</h3>
+                        <span class="item-precio">200 Puntos</span>
+                        <button class="boton-piola" data-item="font-press-start" onclick="comprarItem('font-press-start', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-upheaval">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">Upheaval Retro</h3>
+                        <span class="item-precio">180 Puntos</span>
+                        <button class="boton-piola" data-item="font-upheaval" onclick="comprarItem('font-upheaval', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-vcr">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">VCR OSD Mono</h3>
+                        <span class="item-precio">150 Puntos</span>
+                        <button class="boton-piola" data-item="font-vcr" onclick="comprarItem('font-vcr', this)">Obtener</button>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-preview preview-font font-vt323">
+                        <span>Aa Bb Cc</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="feature-subtitle">VT323 Terminal</h3>
+                        <span class="item-precio">150 Puntos</span>
+                        <button class="boton-piola" data-item="font-vt323" onclick="comprarItem('font-vt323', this)">Obtener</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
